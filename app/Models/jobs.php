@@ -16,4 +16,9 @@ class jobs extends Model
         'min_salary',
         'max_salary'
     ];
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'job_id', 'job_id');
+    }
 }

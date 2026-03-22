@@ -18,8 +18,12 @@ class locations extends Model
         'state_province'
     ];
 
-    public function Countries()
+    public function country()
     {
         return $this->belongsTo(Country::class, 'country_id', 'country_id');
+    }
+    public function departments() 
+    {
+        return $this->hasMany(departments::class, 'location_id', 'location_id');
     }
 }

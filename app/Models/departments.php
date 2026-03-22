@@ -13,9 +13,12 @@ class departments extends Model
     protected $primaryKey = 'department_id';
     protected $fillable = ['department_name'];
 
-    public function Location()
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'department_id', 'department_id');
+    }
+    public function locations()
     {
         return $this->belongsTo(locations::class, 'location_id', 'location_id');
     }
-
 }
