@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class dependent extends Model
 {
@@ -18,6 +19,6 @@ class dependent extends Model
 
     public function employees() 
     {
-        return $this->belongsTo(employees::class, 'employee_id', 'employee_id');
+        return $this->belongsTo(Employee::class, 'employee_id', 'employee_id');
     }
 }
